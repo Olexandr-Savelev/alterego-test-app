@@ -8,8 +8,10 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 
 import { Routes } from "../../../../interfaces/routesInterface";
+import { useTranslation } from "react-i18next";
 
 const MobileMenu: FC<Routes> = ({ routes }) => {
+  const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -66,7 +68,7 @@ const MobileMenu: FC<Routes> = ({ routes }) => {
               textAlign="center"
               sx={{ width: "100%", fontWeight: 700, fontSize: "1.3rem" }}
             >
-              {route}
+              {t(route)}
             </Typography>
           </MenuItem>
         ))}
