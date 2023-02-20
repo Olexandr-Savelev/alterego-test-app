@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 
 import { Routes } from "../../../../interfaces/routesInterface";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const MobileMenu: FC<Routes> = ({ routes }) => {
   const { t } = useTranslation();
@@ -68,7 +69,7 @@ const MobileMenu: FC<Routes> = ({ routes }) => {
               textAlign="center"
               sx={{ width: "100%", fontWeight: 700, fontSize: "1.3rem" }}
             >
-              {t(route)}
+              <Link to={route === "home" ? "/" : `/${route}`}>{t(route)}</Link>
             </Typography>
           </MenuItem>
         ))}
