@@ -24,6 +24,21 @@ export const fetchNews = createAsyncThunk<NewsItem[], number>(
   }
 );
 
+export const deleteNews = createAsyncThunk(
+  "news/delete",
+  async (id: number, { rejectWithValue, dispatch }) => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/posts/${id}`,
+      { method: "DELETE" }
+    );
+
+    if (response.status !== 200) {
+      return rejectWithValue("Failed to fetch news.");
+    }
+    dispatch(removeNews(id));
+  }
+);
+
 const initialState: NewsState = {
   news: [],
   error: null,
@@ -34,7 +49,7 @@ const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
-    deleteNews: (state, action) => {
+    removeNews: (state, action) => {
       state.news = state.news.filter((item) => item.id !== action.payload);
     },
   },
@@ -54,8 +69,22 @@ const newsSlice = createSlice({
       }
       state.status = "idle";
     });
+    builder.addCase(deleteNews.pending, (state) => {
+      state.status = "loading";
+      state.error = null;
+    });
+    builder.addCase(deleteNews.fulfilled, (state) => {
+      state.status = "idle";
+      state.error = null;
+    });
+    builder.addCase(deleteNews.rejected, (state, { payload }) => {
+      if (payload) {
+        state.error = payload as string;
+      }
+      state.status = "idle";
+    });
   },
 });
 
-export const { deleteNews } = newsSlice.actions;
+export const { removeNews } = newsSlice.actions;
 export default newsSlice.reducer;

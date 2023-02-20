@@ -35,7 +35,7 @@ const SwitchButton = () => {
       sx={{
         color: "white",
         display: "block",
-        marginLeft: 2,
+        marginLeft: { sx: 0, md: 2 },
       }}
     >
       <ToggleButton

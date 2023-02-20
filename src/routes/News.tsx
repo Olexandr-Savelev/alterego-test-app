@@ -10,6 +10,7 @@ import Heading from "../components/UI/Heading";
 
 import { useAppDispatch, useSelector } from "../store";
 import { fetchNews } from "../store/slices/newsSlice";
+import { Link } from "react-router-dom";
 
 const News: FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -61,13 +62,14 @@ const News: FC = () => {
           variant="contained"
           onClick={handleClick}
           sx={{ display: "block", mb: 1 }}
+          disabled={status === "loading"}
         >
           Load More
         </Button>
       </Box>
       <Grid
         container
-        spacing={{ xs: 2, md: 3 }}
+        spacing={{ xs: 2, md: 2 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {news.map((newsItem) => (

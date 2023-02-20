@@ -8,6 +8,7 @@ import SwitchButton from "./SwitchButton/SwitchButton";
 import MobileMenu from "./MobileMenu.tsx/MobileMenu";
 import NavBar from "./NavBar/NavBar";
 import { Route } from "../../../interfaces/routesInterface";
+import { Link } from "react-router-dom";
 
 const pages: Route[] = ["home", "news", "profile"];
 
@@ -15,12 +16,15 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar
+          disableGutters
+          sx={{ xs: { display: "flex", justifyContent: "space-between" } }}
+        >
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -38,10 +42,10 @@ const Header = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
-              mr: 2,
+              mr: { sx: 0, md: 2 },
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",

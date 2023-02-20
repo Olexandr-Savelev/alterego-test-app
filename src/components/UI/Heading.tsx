@@ -44,7 +44,6 @@ const Heading: FC<HeadingProps> = ({ text, kind }) => {
       return (
         <Typography
           variant="h3"
-          noWrap
           sx={{
             my: 1,
             fontFamily: "monospace",

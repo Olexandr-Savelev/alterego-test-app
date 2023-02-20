@@ -8,13 +8,15 @@ import Button from "@mui/material/Button";
 import Heading from "../UI/Heading";
 import Paragraph from "../UI/Paragraph";
 
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useSelector } from "../../store";
 import { deleteNews } from "../../store/slices/newsSlice";
 
 import { NewsItem } from "../../interfaces/newsInterface";
 
 const NewsCard: React.FC<NewsItem> = ({ userId, id, title, body }) => {
   const dispatch = useAppDispatch();
+
+  const { status } = useSelector((state) => state.news);
 
   const onNewsDelete = () => {
     dispatch(deleteNews(id));
@@ -38,8 +40,10 @@ const NewsCard: React.FC<NewsItem> = ({ userId, id, title, body }) => {
       </CardContent>
       <CardActions sx={{ mt: "auto" }}>
         <Button
+          variant="outlined"
           size="medium"
           onClick={onNewsDelete}
+          disabled={status === "loading"}
         >
           Delete
         </Button>
