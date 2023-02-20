@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alterego-test-app/static/css/main.0ef1a97e.css",
+    "main.js": "/alterego-test-app/static/js/main.29da7891.js",
+    "static/js/787.8d7411e6.chunk.js": "/alterego-test-app/static/js/787.8d7411e6.chunk.js",
+    "index.html": "/alterego-test-app/index.html",
+    "main.0ef1a97e.css.map": "/alterego-test-app/static/css/main.0ef1a97e.css.map",
+    "main.29da7891.js.map": "/alterego-test-app/static/js/main.29da7891.js.map",
+    "787.8d7411e6.chunk.js.map": "/alterego-test-app/static/js/787.8d7411e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0ef1a97e.css",
+    "static/js/main.29da7891.js"
+  ]
+}
