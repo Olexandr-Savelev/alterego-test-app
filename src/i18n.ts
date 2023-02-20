@@ -18,7 +18,6 @@ const resources = {
     },
   },
 };
-// .use(initReactI18next)
 i18next.use(initReactI18next).init({
   lng: "en",
   resources,

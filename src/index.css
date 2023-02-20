@@ -27,6 +27,7 @@ a {
   justify-content: center;
   height: 100%;
   padding: 3px 6px;
+  transition: all 0.3s;
 }
 .navlink::before {
   transition: all 0.3s;
@@ -40,9 +41,12 @@ a {
   height: 2px;
   background-color: white;
 }
-.navlink:hover::before {
-  opacity: 1;
+.navlink:hover {
+text-shadow: white 1px 0 10px;
 }
+/* .navlink:hover::before {
+  opacity: 1;
+} */
 .navlink_active::before{
   opacity: 1;
 }
