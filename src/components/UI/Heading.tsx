@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Typography from "@mui/material/Typography";
 
-interface HeadingProps {
+interface HeadingProps extends React.HTMLProps<HTMLHeadingElement> {
   text: string;
   kind: "h1" | "h2" | "h3";
 }

@@ -1,4 +1,5 @@
-import * as React from "react";
+import { Link } from "react-router-dom";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -7,9 +8,9 @@ import Container from "@mui/material/Container";
 import SwitchButton from "./SwitchButton/SwitchButton";
 import MobileMenu from "./MobileMenu.tsx/MobileMenu";
 import NavBar from "./NavBar/NavBar";
-import { Route } from "../../../interfaces/routesInterface";
-import { Link } from "react-router-dom";
+
 import { useSelector } from "../../../store";
+import { Route } from "../../../interfaces/routesInterface";
 
 const Header = () => {
   const { isAuthorized } = useSelector((state) => state.auth);

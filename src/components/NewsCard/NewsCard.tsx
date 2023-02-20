@@ -13,7 +13,7 @@ import { deleteNews } from "../../store/slices/newsSlice";
 
 import { NewsItem } from "../../interfaces/newsInterface";
 
-const NewsCard: React.FC<NewsItem> = ({ userId, id, title, body }) => {
+const NewsCard: React.FC<NewsItem> = ({ id, title, body }) => {
   const dispatch = useAppDispatch();
 
   const { status } = useSelector((state) => state.news);

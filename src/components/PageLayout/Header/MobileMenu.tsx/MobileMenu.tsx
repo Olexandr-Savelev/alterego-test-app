@@ -1,4 +1,5 @@
 import { useState, FC } from "react";
+import { Link } from "react-router-dom";
 
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,19 +8,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 
-import { Routes } from "../../../../interfaces/routesInterface";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Routes } from "../../../../interfaces/routesInterface";
 
 const MobileMenu: FC<Routes> = ({ routes }) => {
-  const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const { t } = useTranslation();
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
   return (
     <Box
       sx={{

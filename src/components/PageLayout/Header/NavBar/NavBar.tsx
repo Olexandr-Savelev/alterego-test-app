@@ -4,11 +4,12 @@ import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-import { Routes } from "../../../../interfaces/routesInterface";
 import { useTranslation } from "react-i18next";
+import { Routes } from "../../../../interfaces/routesInterface";
 
 const NavBar: FC<Routes> = ({ routes }) => {
   const { t } = useTranslation();
+
   return (
     <Box
       sx={{

@@ -1,5 +1,8 @@
 import { FC, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+import Heading from "../components/UI/Heading";
+
 import { useSelector } from "../store";
 
 const Profile: FC = () => {
@@ -11,7 +14,13 @@ const Profile: FC = () => {
       navigate("/");
     }
   }, []);
-  return <h1>Profile</h1>;
+
+  return (
+    <Heading
+      kind={"h1"}
+      text={"Profile"}
+    />
+  );
 };
 
 export default Profile;

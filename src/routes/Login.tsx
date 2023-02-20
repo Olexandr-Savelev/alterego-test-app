@@ -1,12 +1,14 @@
 import { FormEvent, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Heading from "../components/UI/Heading";
-import { useAppDispatch, useSelector } from "../store";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
+
+import { useAppDispatch, useSelector } from "../store";
 import { login } from "../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userName, setUserName] = useState<string>("");
@@ -20,7 +22,6 @@ const Login = () => {
   useEffect(() => {
     if (isAuthorized) navigate("/profile");
   }, [isAuthorized]);
-  console.log(isAuthorized, error);
 
   const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

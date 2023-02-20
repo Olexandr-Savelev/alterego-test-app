@@ -7,9 +7,9 @@ import { useEffect } from "react";
 
 const SwitchButton = () => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("uk");
 
-  type Language = "en" | "ua";
+  type Language = "en" | "uk";
 
   const onLanguageChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -39,6 +39,19 @@ const SwitchButton = () => {
       }}
     >
       <ToggleButton
+        value="uk"
+        sx={{
+          color: "white",
+          borderColor: "white",
+          "&.Mui-selected, &.Mui-selected:hover": {
+            color: "blue",
+            backgroundColor: "yellow",
+          },
+        }}
+      >
+        UK
+      </ToggleButton>
+      <ToggleButton
         value="en"
         sx={{
           color: "white",
@@ -50,19 +63,6 @@ const SwitchButton = () => {
         }}
       >
         EN
-      </ToggleButton>
-      <ToggleButton
-        value="ua"
-        sx={{
-          color: "white",
-          borderColor: "white",
-          "&.Mui-selected, &.Mui-selected:hover": {
-            color: "blue",
-            backgroundColor: "yellow",
-          },
-        }}
-      >
-        UA
       </ToggleButton>
     </ToggleButtonGroup>
   );

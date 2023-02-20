@@ -1,11 +1,13 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import PageLayout from "./components/PageLayout/PageLayout";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/Home";
 import News from "./routes/News";
 import Profile from "./routes/Profile";
-import "./i18n";
 import Login from "./routes/Login";
+
+import "./i18n";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
