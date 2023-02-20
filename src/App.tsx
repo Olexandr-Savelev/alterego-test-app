@@ -5,6 +5,7 @@ import Home from "./routes/Home";
 import News from "./routes/News";
 import Profile from "./routes/Profile";
 import "./i18n";
+import Login from "./routes/Login";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },

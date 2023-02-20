@@ -5,10 +5,12 @@ import {
   useSelector as useReduxSelector,
 } from "react-redux";
 import NewsReducer from "./slices/newsSlice";
+import AuthReducer from "./slices/authSlice";
 
 export const store = configureStore({
   reducer: {
     news: NewsReducer,
+    auth: AuthReducer,
   },
 });
 

@@ -10,14 +10,13 @@ import Heading from "../components/UI/Heading";
 
 import { useAppDispatch, useSelector } from "../store";
 import { fetchNews } from "../store/slices/newsSlice";
-import { Link } from "react-router-dom";
 
 const News: FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const firstUpdate = useRef(true);
   const dispatch = useAppDispatch();
 
-  const { news, status, error } = useSelector((state) => state.news);
+  const { news, status } = useSelector((state) => state.news);
 
   const handleClick = () => {
     dispatch(fetchNews(6));

@@ -9,10 +9,14 @@ import MobileMenu from "./MobileMenu.tsx/MobileMenu";
 import NavBar from "./NavBar/NavBar";
 import { Route } from "../../../interfaces/routesInterface";
 import { Link } from "react-router-dom";
-
-const pages: Route[] = ["home", "news", "profile"];
+import { useSelector } from "../../../store";
 
 const Header = () => {
+  const { isAuthorized } = useSelector((state) => state.auth);
+
+  const pages: Route[] = isAuthorized
+    ? ["home", "news", "profile"]
+    : ["home", "news", "login"];
   return (
     <AppBar position="static">
       <Container maxWidth="xl">

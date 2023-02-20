@@ -1,13 +1,13 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
-// "Inline" English and Arabic translations.
-// We can localize to any language and any number of languages.
+
 const resources = {
   en: {
     translation: {
       home: "home",
       news: "news",
       profile: "profile",
+      login: "login",
     },
   },
   ua: {
@@ -15,6 +15,7 @@ const resources = {
       home: "головна",
       news: "новини",
       profile: "профіль",
+      login: "увійти",
     },
   },
 };
